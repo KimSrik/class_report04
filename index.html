@@ -81,9 +81,10 @@
             /* height: 560px; */
             /* background-color: #0f0; */
             /* opacity: 0.2; */
-            text-align: center;          
+            text-align: center;   
+            position: relative;       
         }
-        .main .big-circle{
+        .main .img-circle{
             width: 140px;
             height: 140px;
             margin: 0 auto;
@@ -94,26 +95,40 @@
             margin-bottom: 15px;
             z-index: 10;
         }
-        .main .sm-circle{
+        .main .big-circle{
             position: absolute;
             width: 140px;
             height: 140px;
-            left: 110px;
-            top: 87px;
+            left: 50%;
+            top: 0;
             z-index: 15;
-
-            
+            transform: translateX(-50%);            
         }
-        .sm-circle svg{
+        .big-circle svg{
             width: 100%;
         }
-        .sm-circle path{
+        .big-circle path{
             fill: transparent;
 
             stroke: #8df7c1;
             stroke-width: 20px;
             stroke-dasharray: 742px;
             stroke-dashoffset: 493px;
+        }
+        .sm-circle{
+            position: absolute;
+            left: 224px;
+            top: 103px;
+            width: 20px;
+            height: 20px;
+            font-size: 7px;
+            line-height: 24px;
+            text-align: center;
+            box-shadow: 2px 2px 2px 2px #ff0036;
+            border-radius: 50%;
+            background-color: #ff0036;
+            color: #fff;
+            z-index: 20;
         }
 
         .main h4{
@@ -164,11 +179,16 @@
             width: 87px;
             height: 87px;
             margin-right: 4px;
+            margin-bottom: 4px;
             float: left;
+            cursor: pointer;
         }
 
         .photo04, .photo08{
             margin-right: 0;
+        }
+        .photo05, .photo06, .photo07, .photo08{
+            margin-bottom: 0;
         }
 
         /* FOOTER */
@@ -180,10 +200,15 @@
             flex-flow: row nowrap;
             justify-content: space-evenly;
             align-items: center;
-            
-
         }
-        
+
+
+        .img-box:hover img{
+            transform: translate(10px, -10px) scale(1.1);
+        }
+        .footer .fas:hover{
+            color: #333;
+        }
 
     </style>
 </head>
@@ -224,11 +249,14 @@
 
         <section class="main">
             <div class="container">
-                <div class="big-circle">
+                <div class="img-circle">
                 </div>
-                <div class="sm-circle">
+                <div class="big-circle">
                     <svg viewBox="0 0 512 512">
                     <path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8z"></path></svg>
+                </div>
+                <div class="sm-circle">
+                    50%
                 </div>
                 <h4>Complate</h4>
                 <h2>Hong Gil-dong</h2>
